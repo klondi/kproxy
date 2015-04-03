@@ -1,0 +1,48 @@
+kproxy is a simple C written proxy application.
+
+kproxy is ©2014-2015 Francisco Blas Izquierdo Riera (klondike)
+
+INTRODUCTION
+============
+
+The current status of this project is: working POC
+
+Currently it can only map transaparent sockets (like those provided using a
+REDIRECT rule in iptables) into a static compile time decided SOCKS5 server.
+
+It also contains a DNS server which will map domains into automagically
+generated IPv4 and IPv6 addresses (depending on the request) and can even solve
+PTR requests from the address back into the domain name.
+
+These two components are integrated so if you look up for example for
+myaddress.i2p or myaddress.onion you will get an ip address that will be
+converted back into the original domain when sending the SOCKS5 request to the
+other side.
+
+As such this is a POC implementation of Tor's transparent proxy system including
+the DNS resolution system and so using the same ideas but without depending on
+Tor so it can be used with other projects too (like i2p or ssh SOCKS5 servers).
+
+DEPENDENCIES
+============
+
+This project depends on uthash and libev.
+
+The dependency on uthash is based on the need for a way to provide fast lookups
+for DNS resolution (both direct and reverse). This is attained reasonably well
+by hash tables.
+
+The dependency on libev is based on the need for an event management system for
+many things (like for example removal of expired entries on the DNS server or
+the handling of the sockets). This may change in the future although it's
+unclear when o whether such thing will happen.
+
+COMPILING
+=========
+$ git clone https://github.com/klondi/kproxy.git
+$ cd kproxy
+$ git submodule update
+$ make
+wait for it
+wait for it
+DONE! you can now run it with $ ./kproxy
