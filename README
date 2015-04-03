@@ -46,3 +46,15 @@ $ make
 wait for it
 wait for it
 DONE! you can now run it with $ ./kproxy
+
+THANKS
+======
+This project has received unvaluable support and assistance from the developers
+of (in no particular order):
+* i2p
+* i2pd
+* Tor
+
+I'd also like to thank specially nickm for investing some time and sharing some
+ideas about how to avoid some of the issues Tor found when developing this
+solution on their system.
