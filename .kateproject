@@ -1,0 +1,8 @@
+{
+  "name": "kproxy",
+  "files": [ { "git": 1 } ],
+  "build": {
+    "build": "make all",
+    "clean": "make clean"
+  }
+}
